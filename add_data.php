@@ -13,11 +13,12 @@ if ($conn->connect_error) {
 }
 
 // Recibir datos del formulario
-$name = $_POST['name'];
 $email = $_POST['email'];
+$password = $_POST['password'];
+
 
 // Insertar datos en la base de datos
-$sql = "INSERT INTO registro (name, email) VALUES ('$name', '$email')";
+$sql = "INSERT INTO registro (email, password) VALUES ('$email', '$password')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Data added successfully";
